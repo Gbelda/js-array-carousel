@@ -32,7 +32,6 @@ const btnUp = document.getElementById("select_up")
 var i = 1;
 
 btnDown.addEventListener('click', function () {
-    document.hero_img.src = items[i]
 
     if (i < items.length - 1) {
         i++
@@ -41,6 +40,19 @@ btnDown.addEventListener('click', function () {
         i = 0;
     }
 
+    document.hero_img.src = items[i]
+
 
 })
 
+btnUp.addEventListener('click', function () {
+
+    if (i > 0) {
+        i--
+
+    } else {
+        i = 4;
+    }
+
+    document.hero_img.src = items[i]
+})
