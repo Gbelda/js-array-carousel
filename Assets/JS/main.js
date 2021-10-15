@@ -27,20 +27,42 @@ const text = [
 const btnDown = document.getElementById("select_down")
 const btnUp = document.getElementById("select_up")
 
-//Stabilire il variabile per hero img
 
-var i = 1;
+//Stabilire il ciclo per le immagini di lato
+for (let n = 0; n < items.length; n++) {
+    const imgElement = items[n];
+    const countryImg = `<li class= "box--${n}"><img src=${items[n]} alt=""></img></li>`
+    document.querySelector('.places').insertAdjacentHTML("beforeend", countryImg)
+
+
+}
+
+
+//Stabilire il variabile per hero img
+var i = 0;
+document.querySelector(`.box--0`).classList.add('selected')
 
 btnDown.addEventListener('click', function () {
 
     if (i < items.length - 1) {
-        i++
+        i++;
 
     } else {
         i = 0;
     }
 
-    document.hero_img.src = items[i]
+    document.hero_img.src = items[i];
+    document.querySelector('.title').innerHTML = title[i];
+    document.querySelector('.text').innerHTML = text[i];
+    var select = document.querySelector(`.box--${i}`)
+    select.classList.add('selected')
+    var deselect = document.querySelector(`.box--${i - 1}`)
+    if (i == 0) {
+        document.querySelector(`.box--4`).classList.remove('selected')
+    } else if (i <= 4) {
+        deselect.classList.remove('selected');
+    }
+
 
 
 })
@@ -48,11 +70,25 @@ btnDown.addEventListener('click', function () {
 btnUp.addEventListener('click', function () {
 
     if (i > 0) {
-        i--
+        i--;
 
     } else {
         i = 4;
     }
 
-    document.hero_img.src = items[i]
+    document.hero_img.src = items[i];
+    document.querySelector('.title').innerHTML = title[i];
+    document.querySelector('.text').innerHTML = text[i];
+    var select = document.querySelector(`.box--${i}`)
+    select.classList.add('selected')
+    var deselect = document.querySelector(`.box--${i + 1}`)
+    if (i == 4) {
+        document.querySelector(`.box--0`).classList.remove('selected')
+    } else if (i <= 4) {
+        deselect.classList.remove('selected');
+    }
+
 })
+
+
+
