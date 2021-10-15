@@ -1,4 +1,4 @@
-//ARRAY procurati
+//ARRAYS TO USE
 const items = [
     './img/01.jpg',
     './img/02.jpg',
@@ -42,8 +42,11 @@ for (let n = 0; n < items.length; n++) {
 var i = 0;
 document.querySelector(`.box--0`).classList.add('selected')
 
+
+//CYCLE DOWN FUNCTION
 btnDown.addEventListener('click', function () {
 
+    //HERO IMAGE SELECTOR
     if (i < items.length - 1) {
         i++;
 
@@ -54,6 +57,8 @@ btnDown.addEventListener('click', function () {
     document.hero_img.src = items[i];
     document.querySelector('.title').innerHTML = title[i];
     document.querySelector('.text').innerHTML = text[i];
+
+    //HIGHLIGHT SELECTOR
     var select = document.querySelector(`.box--${i}`)
     select.classList.add('selected')
     var deselect = document.querySelector(`.box--${i - 1}`)
@@ -66,9 +71,10 @@ btnDown.addEventListener('click', function () {
 
 
 })
-
+//CYCLE UP FUNCTION
 btnUp.addEventListener('click', function () {
 
+    //HERO IMAGE SELECTOR
     if (i > 0) {
         i--;
 
@@ -79,6 +85,8 @@ btnUp.addEventListener('click', function () {
     document.hero_img.src = items[i];
     document.querySelector('.title').innerHTML = title[i];
     document.querySelector('.text').innerHTML = text[i];
+
+    //HIGHLIGHT SELECTOR
     var select = document.querySelector(`.box--${i}`)
     select.classList.add('selected')
     var deselect = document.querySelector(`.box--${i + 1}`)
