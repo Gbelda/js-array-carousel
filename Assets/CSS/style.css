@@ -6,17 +6,24 @@
 
 body{
     background-color: rgb(24, 34, 51);
+    
 }
-
 
 
 .container{
     display: flex;
-    
+    height: 500px;
+    position: relative;
+    width: 900px;
+    margin: 5rem auto;
+
 }
 
 .hero{
     width: 80%;
+    display: flex;
+    justify-content: end;
+    align-items: flex-end;
 }
 
 .options{
@@ -61,4 +68,10 @@ body{
 .places .selected{
     border: 2px solid wheat;
     filter: brightness(1);
+}
+
+.description{
+    color: white;
+    text-align: end;
+    padding: 10px;
 }
