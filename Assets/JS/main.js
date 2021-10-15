@@ -54,7 +54,7 @@ btnDown.addEventListener('click', function () {
         i = 0;
     }
 
-    document.hero_img.src = items[i];
+    document.getElementById("hero_img").src = items[i];
     document.querySelector('.title').innerHTML = title[i];
     document.querySelector('.text').innerHTML = text[i];
 
@@ -82,7 +82,7 @@ btnUp.addEventListener('click', function () {
         i = 4;
     }
 
-    document.hero_img.src = items[i];
+    document.getElementById("hero_img").src = items[i];
     document.querySelector('.title').innerHTML = title[i];
     document.querySelector('.text').innerHTML = text[i];
 
