@@ -50,8 +50,9 @@ btnDown.addEventListener('click', function () {
     if (i < items.length - 1) {
         i++;
 
-    } else {
+    } else if (i = items.length) {
         i = 0;
+
     }
 
     document.getElementById("hero_img").src = items[i];
@@ -62,9 +63,10 @@ btnDown.addEventListener('click', function () {
     var select = document.querySelector(`.box--${i}`)
     select.classList.add('selected')
     var deselect = document.querySelector(`.box--${i - 1}`)
+
     if (i == 0) {
         document.querySelector(`.box--4`).classList.remove('selected')
-    } else if (i <= 4) {
+    } else if (i <= items.length) {
         deselect.classList.remove('selected');
     }
 
@@ -90,9 +92,10 @@ btnUp.addEventListener('click', function () {
     var select = document.querySelector(`.box--${i}`)
     select.classList.add('selected')
     var deselect = document.querySelector(`.box--${i + 1}`)
-    if (i == 4) {
+
+    if (i == items.length - 1) {
         document.querySelector(`.box--0`).classList.remove('selected')
-    } else if (i <= 4) {
+    } else if (i <= items.length) {
         deselect.classList.remove('selected');
     }
 
